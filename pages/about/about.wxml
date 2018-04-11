@@ -1,0 +1,11 @@
+<view class='container'>
+  <view class='title'>
+    <image class='about-image' src='https://cdn.v2ex.com/site/logo@2x.png?m=1346064962' />
+  </view>
+  <view class='message'>
+    <text>{{info.title}}</text>
+    <text>{{info.slogan}}</text>
+    <text>{{info.description}}</text>
+    <text>主题:{{states.member_max}} 用户数:{{states.topic_max}}</text>
+  </view>
+</view>

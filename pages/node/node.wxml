@@ -1,0 +1,10 @@
+<!--pages/node/node.wxml-->
+<view class='node-container'>
+  <block wx:for="{{node}}" wx:key="key">
+    <view class='node-item'>
+    <navigator url="../node/detail?id={{item.id}}" hover-class="navigator-hover">
+      <text>{{item.title}}</text>
+    </navigator>
+    </view>
+  </block>
+</view>

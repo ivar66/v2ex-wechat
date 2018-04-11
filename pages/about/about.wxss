@@ -1,0 +1,31 @@
+/* pages/about/about.wxss */
+
+.container {
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.about-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 80%;
+}
+
+.message {
+  width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+text{
+  margin: 4px;
+}
