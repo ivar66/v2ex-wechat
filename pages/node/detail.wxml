@@ -1,2 +1,42 @@
 <!--pages/node/detail.wxml-->
-<text>pages/node/detail.wxml</text>
+<view class='container'>
+  <view class='node'>
+    <view class='node-left'>
+      <text>{{nodeDetail.title}}</text>
+      <text>主题数目:{{nodeDetail.topics}}</text>
+    </view>
+    <view class='node-right'>
+      <image class='node-avatar' src="{{nodeDetail.avatar_normal}}" />
+    </view>
+  </view>
+  <view class='node-header'>
+    <text>一个更好的世界需要你持续地提出好问题。</text>
+  </view>
+  
+  <view style='margin:10px;'>
+    <text>全部主题:</text>
+  </view>
+  <view class="topic-lastest-main">
+    <block wx:for="{{nodeDetailTopic}}">
+      <view class="topic-item" index="{{index}}" id="{{item.id}}" catchtap="redictDetail">
+        <image class="member-avatar" src="{{item.member.avatar_normal}}" background-size="cover"></image>
+        <view class="topic-info">
+          <view class="topic-inner">
+            <view class="topic-left">
+              <view class="topic-title">
+                <text>{{item.title}}</text>
+              </view>
+              <view>
+                <text class="node-name">{{item.node.name}}</text>
+                <text class="member-nickname">{{item.member.username}}</text>
+              </view>
+            </view>
+            <view class="reply-num">{{item.replies}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+
+</view>
