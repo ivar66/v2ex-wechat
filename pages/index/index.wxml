@@ -1,17 +1,17 @@
 <!--index.wxml-->
 <view class="container">
-   <view class='topic-header'>
+  <view class='topic-header'>
     <text>最新主题</text>
-  </view> 
+  </view>
   <view class="topic-lastest-main">
-    <block wx:for="{{latest}}">
+    <block wx:for="{{latest}}" wx:key="key">
       <view class="topic-item" index="{{index}}" id="{{item.id}}" catchtap="redictDetail">
         <image class="member-avatar" src="{{item.member.avatar_normal}}" background-size="cover"></image>
         <view class="topic-info">
           <view class="topic-inner">
             <view class="topic-left">
               <view class="topic-title">
-                <text>{{item.title}}</text>
+                  <text>{{item.title}}</text>
               </view>
               <view>
                 <text class="node-name">{{item.node.name}}</text>
@@ -34,14 +34,14 @@
     <text>热搜主题</text>
   </view>
   <view class="topic-lastest-main">
-    <block wx:for="{{hottest}}">
+    <block wx:for="{{hottest}}" wx:key="key">
       <view class="topic-item" index="{{index}}" id="{{item.id}}" catchtap="redictDetail">
         <image class="member-avatar" src="{{item.member.avatar_normal}}" background-size="cover"></image>
         <view class="topic-info">
           <view class="topic-inner">
             <view class="topic-left">
               <view class="topic-title">
-                <text>{{item.title}}</text>
+                  <text>{{item.title}}</text>
               </view>
               <view>
                 <text class="node-name">{{item.node.name}}</text>

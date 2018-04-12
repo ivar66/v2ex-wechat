@@ -1,18 +1,33 @@
 // pages/post/post.js
+var API = require('../../utils/api.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    postDetail:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.getPostDetail(options.id)
+  },
+  getPostDetail:function(postId){
+    var that =this;
+    wx.request({
+      url: API.getPostDetail({
+        id:postId
+      }),
+      success:function(res){
+        console.log(res);
+        that.setData({
+          'postDetail':res.data[0]
+        })
+      }
+    })
   },
 
   /**

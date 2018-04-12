@@ -17,6 +17,15 @@ Page({
     this.getWebNodeDetail(options.id);
     this.getWebNodeTopic(options.node_name);
   },
+  // 事件处理函数
+  redictDetail: function (e) {
+    var id = e.currentTarget.id,
+      url = '../post/post?id=' + id;
+
+    wx.navigateTo({
+      url: url
+    })
+  },
   getWebNodeDetail:function(id){
     var that = this;
     wx.request({

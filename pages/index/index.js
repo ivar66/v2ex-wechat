@@ -20,6 +20,15 @@ Page({
     that.getLastestTopic();
     that.getHottestTopic();
   },
+  // 事件处理函数
+  redictDetail: function (e) {
+    var id = e.currentTarget.id,
+      url = '../post/post?id=' + id;
+
+    wx.navigateTo({
+      url: url
+    })
+  },
   getLastestTopic:function(){
     var that = this;
     that.setData({

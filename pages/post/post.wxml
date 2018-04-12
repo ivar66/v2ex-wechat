@@ -1,2 +1,25 @@
 <!--pages/post/post.wxml-->
-<text>pages/post/post.wxml</text>
+<view class='container'>
+
+  <view class='view-post'>
+      <view class='view-post-title'>
+        <image class='user-avatar' src="{{postDetail.member.avatar_normal}}" />
+        <view class='topic-title'>
+          <text>{{postDetail.title}}</text>
+        </view>
+      </view>
+      <view class='view-userinfo'>
+        <text class='view-userinfo-node'>{{postDetail.node.name}}</text>
+        <text class='view-userinfo-author'>{{postDetail.member.username}}</text>
+        <text class='view-userinfo-time'>2018/1/1 12:00:00</text>
+        
+      </view>
+
+      <view class='view-post-content'>
+          <text>{{postDetail.content}}</text>
+      </view>
+  </view>
+
+  <view class='view-reply'>
+  </view>
+</view>
