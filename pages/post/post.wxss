@@ -1,51 +1,97 @@
 /* pages/post/post.wxss */
-.container{
+
+.container {
   display: flex;
   flex-direction: column;
 }
 
-.view-post{
+.view-post {
   display: flex;
   flex-direction: column;
   padding: 10px;
 }
 
-.view-post-title{
+.view-post-title {
   display: flex;
   flex-direction: row;
   margin-bottom: 10px;
 }
 
-.user-avatar{
+.user-avatar {
   width: 50px;
   height: 50px;
   border-radius: 80%;
 }
-.topic-title{
+
+.topic-title {
   margin-left: 20px;
 }
 
-.view-userinfo{
+.view-userinfo {
   display: flex;
   flex-direction: row;
   margin-bottom: 10px;
   width: 100%;
 }
 
-.view-userinfo-node{
+.view-userinfo-node {
   background-color: #eee;
   font-size: 12px;
   text-align: center;
 }
 
-.view-userinfo-author{
+.view-userinfo-author {
   font-size: 14px;
   color: #999;
   margin-left: 8px;
 }
 
-.view-userinfo-time{
+.view-userinfo-time {
   font-size: 14px;
   color: #999;
   margin-left: 8px;
+}
+
+.view-reply {
+  display: flex;
+  flex-direction: column;
+  /* border-bottom: 1px solid #eee; */
+  /* border-top: 1px solid #eee; */
+  padding: 8px;
+}
+
+.view-reply-item {
+  margin-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+.view-reply-owner {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+}
+
+.view-reply-user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 80%;
+  margin-left: 10px;
+}
+
+.view-reply-user {
+  margin-left: 10px;
+  margin-top: 10px;
+  color: #999;
+}
+
+.view-reply-time {
+  /* font-size: 14px; */
+  color: #999;
+  margin-top: 10px;
+  margin-left: 6px;
+}
+
+.view-reply-content {
+  margin-top: 8px;
+  margin-left: 15px;
 }

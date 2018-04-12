@@ -2,24 +2,40 @@
 <view class='container'>
 
   <view class='view-post'>
-      <view class='view-post-title'>
-        <image class='user-avatar' src="{{postDetail.member.avatar_normal}}" />
-        <view class='topic-title'>
-          <text>{{postDetail.title}}</text>
-        </view>
+    <view class='view-post-title'>
+      <image class='user-avatar' src="{{postDetail.member.avatar_normal}}" />
+      <view class='topic-title'>
+        <text>{{postDetail.title}}</text>
       </view>
-      <view class='view-userinfo'>
-        <text class='view-userinfo-node'>{{postDetail.node.name}}</text>
-        <text class='view-userinfo-author'>{{postDetail.member.username}}</text>
-        <text class='view-userinfo-time'>2018/1/1 12:00:00</text>
-        
-      </view>
+    </view>
+    <view class='view-userinfo'>
+      <text class='view-userinfo-node'>{{postDetail.node.name}}</text>
+      <text class='view-userinfo-author'>{{postDetail.member.username}}</text>
+      <text class='view-userinfo-time'>2018/1/1 12:00:00</text>
 
-      <view class='view-post-content'>
-          <text>{{postDetail.content}}</text>
-      </view>
+    </view>
+
+    <view class='view-post-content'>
+      <text>{{postDetail.content}}</text>
+    </view>
   </view>
 
   <view class='view-reply'>
+    <block wx:for="{{postReply}}" wx:key="key">
+    <view class='view-reply-item'>
+      <view class='view-reply-owner'>
+        <image class='view-reply-user-avatar'  src="{{item.member.avatar_normal}}" />
+        <view class='view-reply-user'>
+          <text>{{item.member.username}}</text>
+        </view>
+        <view class='view-reply-time'>
+          <text>{{item.created}}</text>
+        </view>
+      </view>
+      <view class='view-reply-content'>
+        <text>{{item.content}}</text>
+      </view>
+    </view>
+    </block>
   </view>
 </view>

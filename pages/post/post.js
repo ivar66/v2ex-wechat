@@ -6,14 +6,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-    postDetail:[]
+    postDetail:[],
+    postReply:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // options.id=1;
     this.getPostDetail(options.id)
+    this.getPostReply(options.id)
   },
   getPostDetail:function(postId){
     var that =this;
@@ -29,7 +32,21 @@ Page({
       }
     })
   },
-
+  getPostReply:function(postId){
+    var that = this;
+    wx.request({
+      url: API.getPostReply({
+        topic_id:postId,
+        page:1
+      }),
+      success:function(res){
+        console.log(res);
+        that.setData({
+          postReply:res.data
+        });
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
