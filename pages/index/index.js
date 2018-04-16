@@ -6,9 +6,9 @@ const app = getApp()
 Page({
   data: {
     hidden: false,
-    hot_hidden:false,
-    latest:[], 
-    hottest:[]   
+    hot_hidden: false,
+    latest: [],
+    hottest: []
   },
   onPullDownRefresh: function () {
     this.getLastestTopic();
@@ -29,7 +29,7 @@ Page({
       url: url
     })
   },
-  getLastestTopic:function(){
+  getLastestTopic: function () {
     var that = this;
     that.setData({
       hidden: false
@@ -37,7 +37,7 @@ Page({
     wx.request({
       url: Api.getLatestTopic({
         p: 1
-      }), 
+      }),
       success: function (res) {
         console.log(res);
         that.setData({
@@ -49,29 +49,29 @@ Page({
           })
         }, 300)
       }
-      
+
     })
   },
-  getHottestTopic:function(){
+  getHottestTopic: function () {
     var that = this;
     that.setData({
       hot_hidden: false
     })
     wx.request({
       url: Api.getHottestTopic({
-        p:1
+        p: 1
       }),
-      success:function(res){
+      success: function (res) {
         console.log(res);
         that.setData({
-          hottest:res.data
+          hottest: res.data
         })
         setTimeout(function () {
           that.setData({
             hot_hidden: true
           })
         }, 300)
-        
+
       }
     })
   }
